@@ -7,13 +7,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
     
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var counterLabel: UILabel!
-    @IBOutlet weak var buttonPress: UIButton!
+    @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var counterLabel: UILabel!
+    @IBOutlet private weak var buttonPress: UIButton!
     
-    var counter = 0
+    private var counter = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,12 +32,12 @@ class ViewController: UIViewController {
         updateCounterLabel()
     }
     
-    @IBAction func buttonPressed(_ sender: Any) {
+    @IBAction private func buttonPressed(_ sender: Any) {
         counter += 1
         updateCounterLabel()
     }
     
-    func updateCounterLabel() {
+    private func updateCounterLabel() {
         counterLabel.text = "\(counter)"
     }
 }
